@@ -1,6 +1,8 @@
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Locale;
 
 public class Main {
@@ -12,6 +14,12 @@ public class Main {
         Date birthDate = formatter.parse(myBirthday);
         String output = formatter.format(birthDate);
         System.out.println(output);
+
+        // Day of week of my Birthday
+
+        Calendar calendar = new GregorianCalendar();
+        calendar.setTime(birthDate);
+        System.out.println(calendar.get(Calendar.DAY_OF_WEEK));
 
     }
 }
